@@ -8287,3 +8287,206 @@ com.greenfox.hackathon.exception.InvalidPasswordException: null
 2021-04-27 11:32:51 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
 2021-04-27 11:32:51 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
 2021-04-27 11:32:51 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2021-04-27 12:56:19 [restartedMain] INFO  c.g.hackathon.HackathonApplication - Starting HackathonApplication on BG-Vivo with PID 8372 (C:\Users\BG\Desktop\HackathonASD-backend\build\classes\java\main started by BG in C:\Users\BG\Desktop\HackathonASD-backend)
+2021-04-27 12:56:19 [restartedMain] INFO  c.g.hackathon.HackathonApplication - No active profile set, falling back to default profiles: default
+2021-04-27 12:56:19 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\BG\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-runtime\2.3.2\5528bc882ea499a09d720b42af11785c4fc6be2a\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/txw2-2.3.2.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/istack-commons-runtime-3.0.8.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/stax-ex-1.8.1.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/FastInfoset-1.2.16.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.activation-api-1.2.1.jar
+2021-04-27 12:56:19 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-27 12:56:19 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-27 12:56:20 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-27 12:56:20 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67ms. Found 2 JPA repository interfaces.
+2021-04-27 12:56:20 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-27 12:56:20 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 12:56:20 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-27 12:56:20 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-27 12:56:20 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1472 ms
+2021-04-27 12:56:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-04-27 12:56:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-04-27 12:56:21 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost/webshop?serverTimezone=UTC'
+2021-04-27 12:56:21 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 6.0.8 by Redgate
+2021-04-27 12:56:21 [restartedMain] INFO  o.f.c.i.database.DatabaseFactory - Database: jdbc:mysql://localhost/webshop (MySQL 8.0)
+2021-04-27 12:56:21 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.014s)
+2021-04-27 12:56:21 [restartedMain] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table `webshop`.`flyway_schema_history` ...
+2021-04-27 12:56:21 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `webshop`: << Empty Schema >>
+2021-04-27 12:56:21 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema `webshop` to version 0426.1222
+2021-04-27 12:56:21 [restartedMain] WARN  o.f.c.i.s.DefaultSqlScriptExecutor - DB: Unknown table 'webshop.items' (SQL State: 42S02 - Error Code: 1051)
+2021-04-27 12:56:21 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Migrating schema `webshop` to version 0426.1652
+2021-04-27 12:56:21 [restartedMain] WARN  o.f.c.i.s.DefaultSqlScriptExecutor - DB: Unknown table 'webshop.users' (SQL State: 42S02 - Error Code: 1051)
+2021-04-27 12:56:21 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema `webshop` (execution time 00:00.187s)
+2021-04-27 12:56:21 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-27 12:56:21 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.12.Final
+2021-04-27 12:56:22 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-04-27 12:56:22 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-04-27 12:56:22 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-27 12:56:22 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-27 12:56:23 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-04-27 12:56:23 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-27 12:56:23 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@86297c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@5c0537df, org.springframework.security.web.header.HeaderWriterFilter@48a2e549, org.springframework.security.web.authentication.logout.LogoutFilter@29d56934, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1cf0ac81, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@12ce8a14, com.greenfox.hackathon.security.JwtRequestFilter@5a7ebd4c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@553af829, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41d23fb3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c827d01, org.springframework.security.web.session.SessionManagementFilter@1aa4573, org.springframework.security.web.access.ExceptionTranslationFilter@f14eb13, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@200b9315]
+2021-04-27 12:56:23 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-27 12:56:23 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-27 12:56:23 [restartedMain] INFO  c.g.hackathon.HackathonApplication - Started HackathonApplication in 4.464 seconds (JVM running for 5.181)
+2021-04-27 13:10:03 [restartedMain] INFO  c.g.hackathon.HackathonApplication - Starting HackathonApplication on BG-Vivo with PID 1168 (C:\Users\BG\Desktop\HackathonASD-backend\build\classes\java\main started by BG in C:\Users\BG\Desktop\HackathonASD-backend)
+2021-04-27 13:10:03 [restartedMain] INFO  c.g.hackathon.HackathonApplication - No active profile set, falling back to default profiles: default
+2021-04-27 13:10:03 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\BG\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-runtime\2.3.2\5528bc882ea499a09d720b42af11785c4fc6be2a\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/txw2-2.3.2.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/istack-commons-runtime-3.0.8.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/stax-ex-1.8.1.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/FastInfoset-1.2.16.jar,file:/C:/Users/BG/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.activation-api-1.2.1.jar
+2021-04-27 13:10:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-27 13:10:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-27 13:10:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-27 13:10:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67ms. Found 2 JPA repository interfaces.
+2021-04-27 13:10:05 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-27 13:10:05 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-27 13:10:05 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2021-04-27 13:10:05 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-27 13:10:05 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1291 ms
+2021-04-27 13:10:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-04-27 13:10:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2021-04-27 13:10:05 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost/webshop?serverTimezone=UTC'
+2021-04-27 13:10:05 [restartedMain] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 6.0.8 by Redgate
+2021-04-27 13:10:05 [restartedMain] INFO  o.f.c.i.database.DatabaseFactory - Database: jdbc:mysql://localhost/webshop (MySQL 8.0)
+2021-04-27 13:10:05 [restartedMain] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.015s)
+2021-04-27 13:10:05 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `webshop`: 0426.1652
+2021-04-27 13:10:05 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema `webshop` is up to date. No migration necessary.
+2021-04-27 13:10:05 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-27 13:10:05 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.12.Final
+2021-04-27 13:10:06 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-04-27 13:10:06 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-04-27 13:10:06 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-27 13:10:06 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-27 13:10:07 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-04-27 13:10:07 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-27 13:10:07 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@247685fe, org.springframework.security.web.context.SecurityContextPersistenceFilter@24a191d9, org.springframework.security.web.header.HeaderWriterFilter@6e44bf28, org.springframework.security.web.authentication.logout.LogoutFilter@284ab9b2, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@e2bd242, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@8f2ae05, com.greenfox.hackathon.security.JwtRequestFilter@7dc664d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4029fb27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41efc08e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@386cb036, org.springframework.security.web.session.SessionManagementFilter@3738e9b1, org.springframework.security.web.access.ExceptionTranslationFilter@10315481, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ee0bb8e]
+2021-04-27 13:10:07 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-27 13:10:07 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-27 13:10:07 [restartedMain] INFO  c.g.hackathon.HackathonApplication - Started HackathonApplication in 4.078 seconds (JVM running for 4.655)
+2021-04-27 13:10:33 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 13:10:33 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-04-27 13:10:33 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2021-04-27 13:10:33 [http-nio-8080-exec-2] INFO  c.g.h.e.RequestResponseLoggingFilter - Logging Request: GET /item/1
+2021-04-27 13:10:34 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        item0_.id as id1_0_0_,
+        item0_.cost as cost2_0_0_,
+        item0_.department as departme3_0_0_,
+        item0_.description as descript4_0_0_,
+        item0_.link_to_image as link_to_5_0_0_,
+        item0_.name as name6_0_0_ 
+    from
+        items item0_ 
+    where
+        item0_.id=?
+2021-04-27 13:10:34 [http-nio-8080-exec-2] INFO  c.g.h.e.RequestResponseLoggingFilter - Logging Response: 200, execution time: 128
+2021-04-27 13:10:44 [http-nio-8080-exec-3] INFO  c.g.h.e.RequestResponseLoggingFilter - Logging Request: GET /item/3
+2021-04-27 13:10:44 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        item0_.id as id1_0_0_,
+        item0_.cost as cost2_0_0_,
+        item0_.department as departme3_0_0_,
+        item0_.description as descript4_0_0_,
+        item0_.link_to_image as link_to_5_0_0_,
+        item0_.name as name6_0_0_ 
+    from
+        items item0_ 
+    where
+        item0_.id=?
+2021-04-27 13:10:44 [http-nio-8080-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.NoSuchElementException: No value present] with root cause
+java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.orElseThrow(Optional.java:375)
+	at com.greenfox.hackathon.service.ItemService.findItem(ItemService.java:100)
+	at com.greenfox.hackathon.controller.ItemController.getItem(ItemController.java:45)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.greenfox.hackathon.exception.RequestResponseLoggingFilter.doFilter(RequestResponseLoggingFilter.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at com.greenfox.hackathon.security.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:160)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.greenfox.hackathon.security.CorsConfigurer.doFilterInternal(CorsConfigurer.java:40)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)

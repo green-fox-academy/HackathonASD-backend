@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,27 +29,31 @@ public class ItemController {
     this.itemService = itemService;
   }
 
-  @PostMapping("/saveItem")
+  @PostMapping("/item")
   public ResponseEntity<?> saveItemToDatabase(@RequestBody(required = false) ItemDTO itemDTO)
       throws InvalidItemDTOException {
     return ResponseEntity.ok(itemService.saveItem(itemDTO));
   }
 
-  @GetMapping("/getAllItems")
+  @GetMapping("/item")
   public ResponseEntity<?> getAllItems() {
     return ResponseEntity.ok(itemService.getAllItems());
   }
 
-  @PutMapping("/updateItem")
+  @GetMapping("/item/{id}")
+  public ResponseEntity<?> getItem(@PathVariable long id) throws NoSuchItemException {
+    return ResponseEntity.ok(itemService.findItem(id));
+  }
+
+  @PutMapping("/item")
   public ResponseEntity<?> updateItem(@RequestBody(required = false)
                                           ItemUpdateDTO itemUpdateDTO)
       throws InvalidItemUpdateDTOException, NoSuchItemException {
     return ResponseEntity.ok(itemService.updateItem(itemUpdateDTO));
   }
 
-  @DeleteMapping("/deleteItem")
-  public ResponseEntity<?> deleteItem(@RequestBody(required = false)
-                                          Long id) throws MissingParameterException {
+  @DeleteMapping("/item/{id}")
+  public ResponseEntity<?> deleteItem(@PathVariable Long id) throws MissingParameterException {
     return ResponseEntity.ok(itemService.deleteItem(id));
   }
 
