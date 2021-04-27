@@ -96,6 +96,10 @@ public class ItemService {
     }
   }
 
+  public Item findItem(long id) throws NoSuchItemException{
+    return itemRepository.findById(id).orElseThrow() ;
+  }
+
   //todo test for functions
 
 

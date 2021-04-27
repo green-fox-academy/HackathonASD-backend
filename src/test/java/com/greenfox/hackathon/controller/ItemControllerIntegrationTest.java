@@ -46,7 +46,7 @@ public class ItemControllerIntegrationTest {
       throws Exception {
     List<Item> items = itemRepository.findAll();
     int repoSize = items.size();
-    mockMvc.perform(get("/getAllItems"))
+    mockMvc.perform(get("/item"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$", hasSize(repoSize)))
         .andExpect(jsonPath("$[0].name", is("exampleItemShoes")))
