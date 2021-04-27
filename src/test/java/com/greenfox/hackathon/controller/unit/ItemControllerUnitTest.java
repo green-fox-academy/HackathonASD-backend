@@ -42,7 +42,7 @@ public class ItemControllerUnitTest {
     items.add(new Item( "Watch"));
     items.add(new Item("Balloon"));
     when(itemService.getAllItems()).thenReturn(items);
-    mockMvc.perform(get("/getAllItems"))
+    mockMvc.perform(get("/item"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$", hasSize(2)))
         .andExpect(jsonPath("$[0].name", is("Watch")))
@@ -54,7 +54,7 @@ public class ItemControllerUnitTest {
     List<Item> items = new ArrayList<>();
     when(itemService.getAllItems())
         .thenReturn(items);
-    mockMvc.perform(get("/getAllItems"))
+    mockMvc.perform(get("/item"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$", hasSize(0)))
         .andExpect(jsonPath("$").exists());
@@ -64,7 +64,7 @@ public class ItemControllerUnitTest {
   public void givenSaveItem_whenItCalled_thenReturnSavedItem() throws Exception {
     when(itemService.saveItem(any()))
         .thenReturn(new Item( "Watch"));
-    mockMvc.perform(post("/saveItem"))
+    mockMvc.perform(post("/item"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.name", is("Watch")));
   }
@@ -73,7 +73,7 @@ public class ItemControllerUnitTest {
   public void givenUpdateItem_whenItCalled_thenReturnUpdatedItem() throws Exception {
     when(itemService.updateItem(any()))
         .thenReturn(new Item( "Watch"));
-    mockMvc.perform(put("/updateItem"))
+    mockMvc.perform(put("/item"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.name", is("Watch")));
   }
@@ -82,7 +82,7 @@ public class ItemControllerUnitTest {
   public void givenDeleteItem_whenItCalled_thenReturnDeletedItem() throws Exception {
     when(itemService.deleteItem(any()))
         .thenReturn(new Item( "Watch"));
-    mockMvc.perform(delete("/deleteItem"))
+    mockMvc.perform(delete("/item"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.name", is("Watch")));
   }
