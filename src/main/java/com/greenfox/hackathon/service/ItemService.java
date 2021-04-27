@@ -8,10 +8,10 @@ import com.greenfox.hackathon.model.Item;
 import com.greenfox.hackathon.model.ItemDTO;
 import com.greenfox.hackathon.model.ItemUpdateDTO;
 import com.greenfox.hackathon.repository.ItemRepository;
-import java.util.List;
-import java.util.Optional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,8 +25,8 @@ public class ItemService {
     this.itemRepository = itemRepository;
   }
 
-  public List<Item> getAllItems() {
-    return itemRepository.findAll();
+  public Page<Item> getAllItems(Pageable pageable) {
+    return itemRepository.findAll(pageable);
   }
 
   public Item saveItem(ItemDTO itemDTO) throws InvalidItemDTOException {

@@ -4,11 +4,13 @@ import com.greenfox.hackathon.exception.InvalidItemDTOException;
 import com.greenfox.hackathon.exception.InvalidItemUpdateDTOException;
 import com.greenfox.hackathon.exception.MissingParameterException;
 import com.greenfox.hackathon.exception.NoSuchItemException;
+import com.greenfox.hackathon.model.Item;
 import com.greenfox.hackathon.model.ItemDTO;
 import com.greenfox.hackathon.model.ItemUpdateDTO;
-import com.greenfox.hackathon.model.LoginRequestDTO;
 import com.greenfox.hackathon.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class ItemController {
@@ -30,14 +34,14 @@ public class ItemController {
   }
 
   @PostMapping("/item")
-  public ResponseEntity<?> saveItemToDatabase(@RequestBody(required = false) ItemDTO itemDTO)
+  public ResponseEntity<Item> saveItemToDatabase(@RequestBody(required = false) ItemDTO itemDTO)
       throws InvalidItemDTOException {
     return ResponseEntity.ok(itemService.saveItem(itemDTO));
   }
 
   @GetMapping("/item")
-  public ResponseEntity<?> getAllItems() {
-    return ResponseEntity.ok(itemService.getAllItems());
+  public ResponseEntity<Page<Item>> getAllItems(Pageable pageable) {
+    return ResponseEntity.ok(itemService.getAllItems(pageable));
   }
 
   @GetMapping("/item/{id}")
@@ -46,14 +50,15 @@ public class ItemController {
   }
 
   @PutMapping("/item")
-  public ResponseEntity<?> updateItem(@RequestBody(required = false)
-                                          ItemUpdateDTO itemUpdateDTO)
+  public ResponseEntity<Item> updateItem(@RequestBody(required = false)
+                                             ItemUpdateDTO itemUpdateDTO)
       throws InvalidItemUpdateDTOException, NoSuchItemException {
     return ResponseEntity.ok(itemService.updateItem(itemUpdateDTO));
   }
 
   @DeleteMapping("/item/{id}")
-  public ResponseEntity<?> deleteItem(@PathVariable Long id) throws MissingParameterException {
+  public ResponseEntity<Item> deleteItem(@PathVariable
+                                             Long id) throws MissingParameterException {
     return ResponseEntity.ok(itemService.deleteItem(id));
   }
 
@@ -78,6 +83,4 @@ public class ItemController {
 //  public ResponseEntity<?> getSearchedItems(@RequestParam String searchedItem) {
 //    return ResponseEntity.ok(itemService.getSearchedItems(searchedItem));
 //  }
-
-
 }
