@@ -1,14 +1,11 @@
 package com.greenfox.hackathon.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "items")
@@ -17,16 +14,22 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Item {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  private String name;
-  private String department;
-  private String description;
-  private String linkToImage;
-  private Long cost;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String department;
+    private String description;
+    private String linkToImage;
+    private Long cost;
+    private Long quantity;
+    @Column(name = "discounted_price")
+    private Long discountedPrice;
+    private Long discountRate = 0L;
+    @Column(name = "discounted")
+    private boolean isDiscounted = false;
 
-  public Item(String name) {
-    this.name = name;
-  }
+    public Item(String name) {
+        this.name = name;
+    }
 }
