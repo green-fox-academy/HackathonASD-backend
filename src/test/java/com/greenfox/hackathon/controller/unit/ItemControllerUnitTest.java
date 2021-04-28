@@ -48,7 +48,7 @@ public class ItemControllerUnitTest {
     items.add(new Item( "Watch"));
     items.add(new Item("Balloon"));
     Page<Item> page = new PageImpl<>(items);
-    when(itemService.getAllItems(any())).thenReturn(page);
+    when(itemService.getAllItems()).thenReturn(items);
     mockMvc.perform(get("/item")
         .param("page", "6")
         .param("size", "14")
@@ -65,8 +65,8 @@ public class ItemControllerUnitTest {
   public void givenGetAllItems_whenItCalled_thenReturnEmptyListOfItems() throws Exception {
     List<Item> items = new ArrayList<>();
     Page<Item> page = new PageImpl<>(items);
-    when(itemService.getAllItems(any()))
-        .thenReturn(page);
+    when(itemService.getAllItems())
+        .thenReturn(items);
     mockMvc.perform(get("/item"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.content", hasSize(0)))

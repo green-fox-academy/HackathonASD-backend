@@ -16,4 +16,7 @@ public class ItemDTO {
   private String description;
   private String linkToImage;
   private Long cost;
+  private Long quantity;
+  private Long discountedPrice;
+  private Long discountRate;
 }
