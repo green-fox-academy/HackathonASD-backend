@@ -8,7 +8,10 @@ import lombok.Setter;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -18,7 +21,17 @@ import javax.persistence.Table;
 @AllArgsConstructor
 public class User {
   @Id
-  @Column(unique = true)
+//  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
   private String username;
   private String password;
+
+  @OneToMany(mappedBy = "user")
+  private List<Order> orderList = new ArrayList<>();
+
+  public User(String username, String password) {
+    this.username = username;
+    this.password = password;
+  }
 }
