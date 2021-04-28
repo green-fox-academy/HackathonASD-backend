@@ -1,0 +1,11 @@
+ALTER TABLE users
+    ADD email VARCHAR(127) NOT NULL DEFAULT '';
+
+ALTER TABLE users
+    ADD token VARCHAR(36) NOT NULL DEFAULT '';
+
+ALTER TABLE users
+    ADD verified BIT NOT NULL DEFAULT FALSE;
+
+UPDATE users
+    SET verified=TRUE;

@@ -1,5 +1,6 @@
 package com.greenfox.hackathon.service;
 
+import com.greenfox.hackathon.exception.InvalidUsernameException;
 import com.greenfox.hackathon.exception.UserDoesNotExistException;
 import com.greenfox.hackathon.exception.UsernameAlreadyTakenException;
 import com.greenfox.hackathon.model.User;
@@ -21,7 +22,7 @@ public class UserServiceIntegrationTest {
 
   @Test
   public void givenFindByUsername_whenMockRepoReturnsNotEmptyOptional_thenReturnsValidUser()
-      throws UsernameAlreadyTakenException, UserDoesNotExistException {
+      throws UsernameAlreadyTakenException, UserDoesNotExistException, InvalidUsernameException {
     User newUser = new User("lofaszka", "pass");
     userService.addUser(newUser);
     assertEquals(newUser.getUsername(), userService.getUserByUsername("lofaszka").getUsername());

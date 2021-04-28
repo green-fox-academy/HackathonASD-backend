@@ -36,8 +36,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     compileOnly 'org.projectlombok:lombok'
@@ -50,12 +52,14 @@ dependencies {
     compile 'org.modelmapper:modelmapper:2.3.3'
     compile 'io.jsonwebtoken:jjwt:0.2'
     testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'com.icegreen:greenmail-junit4:1.6.2'
     compile 'org.springframework.boot:spring-boot-starter-oauth2-client:2.4.3'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation('com.squareup.retrofit2:retrofit:2.4.0')
     implementation('com.squareup.retrofit2:converter-gson:2.4.0')
     implementation 'org.flywaydb:flyway-core'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 test {

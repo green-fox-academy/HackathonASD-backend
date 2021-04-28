@@ -13,6 +13,8 @@ import org.mockito.Mockito;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.Optional;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -23,14 +25,15 @@ public class UserServiceUnitTest {
   UserService userService;
   User user;
   UserDetailsService userDetailsService;
+  PasswordEncoder passwordEncoder;
 
-  @Before
-  public void setup() {
-    mockedUserRepository = Mockito.mock(UserRepository.class);
-
-    userService = new UserService(userDetailsService, mockedUserRepository);
-    user = new User("user", "pass");
-  }
+//  @Before
+//  public void setup() {
+//    mockedUserRepository = Mockito.mock(UserRepository.class);
+//
+//    userService = new UserService(userDetailsService, mockedUserRepository);
+//    user = new User("user", "pass");
+//  }
 
   @Test
   public void givenGetUserByUsername_whenRepoReturnsNotEmptyOptional_thenReturnsValidUser() throws Exception {
@@ -50,32 +53,32 @@ public class UserServiceUnitTest {
   @Test(expected = MissingParameterException.class)
   public void givenRegister_whenUsernameIsNull_thenThrowsMissingFieldException()
       throws MissingParameterException, UsernameAlreadyTakenException {
-    userService.register(new RegisterRequestDTO(null, "pass"));
+    userService.register(new RegisterRequestDTO(null, "pass", "pass"));
   }
 
   @Test(expected = MissingParameterException.class)
   public void givenRegister_whenPasswordIsNull_thenThrowsMissingFieldException()
       throws MissingParameterException, UsernameAlreadyTakenException {
-    userService.register(new RegisterRequestDTO("user", null));
+    userService.register(new RegisterRequestDTO("user", "pass", null));
   }
 
   @Test(expected = MissingParameterException.class)
   public void givenRegister_whenRequestIsNull_thenThrowsMissingFieldException()
       throws MissingParameterException, UsernameAlreadyTakenException {
-    userService.register(new RegisterRequestDTO(null, null));
+    userService.register(new RegisterRequestDTO(null, null, null));
   }
 
 
   @Test(expected = MissingParameterException.class)
   public void givenRegister_whenUsernameIsEmpty_thenThrowsMissingFieldException()
       throws MissingParameterException, UsernameAlreadyTakenException {
-    userService.register(new RegisterRequestDTO("", "password"));
+    userService.register(new RegisterRequestDTO("","pass", "password"));
   }
 
   @Test(expected = MissingParameterException.class)
   public void givenRegister_whenPasswordIsEmpty_thenThrowsMissingFieldException()
       throws MissingParameterException, UsernameAlreadyTakenException {
-    userService.register(new RegisterRequestDTO("user", ""));
+    userService.register(new RegisterRequestDTO("user", "pass", ""));
   }
 }
 

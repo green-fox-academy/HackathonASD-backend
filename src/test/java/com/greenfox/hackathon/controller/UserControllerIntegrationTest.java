@@ -41,7 +41,7 @@ public class UserControllerIntegrationTest {
 
   @Test
   public void givenRegisterUrl_whenMockMvc_thenStatusOk_andReturnsNewUser() throws Exception {
-    registerRequestDto = new RegisterRequestDTO("lol", "pass");
+    registerRequestDto = new RegisterRequestDTO("lol", "pass", "pass");
     String request = objectMapper.writeValueAsString(registerRequestDto);
 
     mockMvc.perform(post("/register")
@@ -54,7 +54,7 @@ public class UserControllerIntegrationTest {
   @Test
   public void givenRegisterUrl_whenMockMvcMissingUsername_thenStatusBadRequest_andThrowException()
       throws Exception {
-    registerRequestDto = new RegisterRequestDTO("", "pass");
+    registerRequestDto = new RegisterRequestDTO("", "pass", "pass");
     String request = objectMapper.writeValueAsString(registerRequestDto);
 
     mockMvc.perform(post("/register").content(request).contentType(MediaType.APPLICATION_JSON))

@@ -44,4 +44,17 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         }
         chain.doFilter(request, response);
     }
+
+  private void setupTokenForSecurityFilter(HttpServletRequest request, String jwt,
+                                           UserDetails userDetails) {
+    if (jwtUtil.validateToken(jwt, userDetails)) {
+
+      UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+          new UsernamePasswordAuthenticationToken(
+              userDetails, null, userDetails.getAuthorities());
+      usernamePasswordAuthenticationToken
+          .setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+      SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+    }
+  }
 }
