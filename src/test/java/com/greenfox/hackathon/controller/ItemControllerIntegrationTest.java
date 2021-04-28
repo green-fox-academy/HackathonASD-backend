@@ -18,6 +18,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -46,10 +48,14 @@ public class ItemControllerIntegrationTest {
       throws Exception {
     List<Item> items = itemRepository.findAll();
     int repoSize = items.size();
-    mockMvc.perform(get("/item"))
+    mockMvc.perform(get("/item")
+        .param("page", "0")
+        .param("size", "10")
+        .param("sort", "cost,asc")
+        .param("sort", "name,desc"))
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$", hasSize(repoSize)))
-        .andExpect(jsonPath("$[0].name", is("exampleItemShoes")))
-        .andExpect(jsonPath("$[1].name", is("exampleItemWatch")));
+        .andExpect(jsonPath("$.content", hasSize(repoSize)))
+        .andExpect(jsonPath("$.content[0].name", is("exampleItemShoes")))
+        .andExpect(jsonPath("$.content[1].name", is("exampleItemWatch")));
   }
 }
