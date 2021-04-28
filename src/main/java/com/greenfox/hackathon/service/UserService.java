@@ -49,7 +49,7 @@ public class UserService {
       throw new MissingParameterException("Missing parameter(s): password, username, kingdomName!");
     }
     registerValidate(registerRequestDTO.getUsername(), registerRequestDTO.getPassword());
-    Optional<User> findById = userRepository.findById(registerRequestDTO.getUsername());
+    Optional<User> findById = userRepository.findUserByUsername(registerRequestDTO.getUsername());
     if (findById.isPresent()) {
       throw new UsernameAlreadyTakenException();
     }
