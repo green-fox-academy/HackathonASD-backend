@@ -1,20 +1,12 @@
 package com.greenfox.hackathon.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,14 +27,20 @@ public class User {
   @NotNull
   private String email;
   private boolean verified;
+
   @OneToMany(mappedBy = "user")
   private List<Order> orderList = new ArrayList<>();
 
-  public User(String username, @NotNull String password) {
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "wishlist_id")
+  private Wishlist wishlist;
+
+  public User(String username, @NotNull String password,Wishlist wishlist) {
     this.username = username;
     this.password = password;
     this.email = "";
     this.token = "";
+    this.wishlist = wishlist;
   }
 
   public User(String username, String password, String token, String email, boolean verified) {
