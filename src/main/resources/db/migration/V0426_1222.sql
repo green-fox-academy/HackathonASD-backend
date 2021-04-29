@@ -27,6 +27,7 @@ CREATE TABLE orders
 (
     id          bigint not null auto_increment,
     user_id bigint not null,
+    address varchar (255),
     FOREIGN KEY (user_id) REFERENCES users (id),
     PRIMARY KEY (id)
 );
@@ -46,6 +47,8 @@ FOREIGN KEY (item_id) REFERENCES items (id)
 
 INSERT INTO users (username, password)
 VALUES ('Bond', 'password');
+INSERT INTO users (username, password)
+VALUES ('James', 'password');
 
 
 INSERT INTO items(name,department,description,link_to_image,cost)

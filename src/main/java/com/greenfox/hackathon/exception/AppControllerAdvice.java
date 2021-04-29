@@ -1,6 +1,8 @@
 package com.greenfox.hackathon.exception;
 
+import com.greenfox.hackathon.model.ItemErrorResponseDTO;
 import com.greenfox.hackathon.model.LoginErrorResponseDTO;
+import com.greenfox.hackathon.model.OrderErrorResponseDTO;
 import com.greenfox.hackathon.model.RegisterErrorResponseDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +38,18 @@ public class AppControllerAdvice {
   ResponseEntity<Object> userDoesNotExistExceptionHandler(UserDoesNotExistException e) {
     return errorResponse(
         new ResponseEntity<>(new LoginErrorResponseDTO("error", e.getMessage()), HttpStatus.UNAUTHORIZED), e);
+  }
+
+  @ExceptionHandler(NoSuchOrderException.class)
+  ResponseEntity<Object> noSuchOrderExceptionHandler(NoSuchOrderException e) {
+    return errorResponse(
+        new ResponseEntity<>(new OrderErrorResponseDTO(e.getMessage()), HttpStatus.BAD_REQUEST), e);
+  }
+
+  @ExceptionHandler(NoSuchItemException.class)
+  ResponseEntity<Object> noSuchItemExceptionHandler(NoSuchItemException e) {
+    return errorResponse(
+        new ResponseEntity<>(new ItemErrorResponseDTO(e.getMessage()), HttpStatus.BAD_REQUEST), e);
   }
 
   protected ResponseEntity<Object> errorResponse(ResponseEntity<Object> responseEntity, Throwable throwable) {

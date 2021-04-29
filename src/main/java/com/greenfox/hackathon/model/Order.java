@@ -28,6 +28,7 @@ public class Order {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+  private String address;
 
   @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "user_id")
@@ -40,4 +41,5 @@ public class Order {
       inverseJoinColumns = {@JoinColumn(name = "item_id")}
   )
   private List<Item> itemList = new ArrayList<>();
+
 }
