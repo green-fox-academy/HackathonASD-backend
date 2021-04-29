@@ -46,66 +46,66 @@ public class UserControllerUnitTest {
   ObjectMapper objectMapper = new ObjectMapper();
   LoginErrorResponseDTO errorResponse = new LoginErrorResponseDTO("error", null);
 
-  @Test
-  public void givenLogin_whenRequestBodyIsValid_thenReturnsOk() throws Exception {
-    mockUser.setUsername("user");
-    mockUser.setPassword("pass");
-    AppUserDetails appUserDetails = new AppUserDetails(mockUser);
-    UserDetails userDetails = modelMapper.map(appUserDetails, UserDetails.class);
-    when(mockedUserService.authenticateUser(any())).thenReturn(userDetails);
-    when(mockedJwtUtil.generateToken(any())).thenReturn("^[A-Za-z0-9-_]*\\.[A-Za-z0-9-_]*\\.[A-Za-z0-9-_]*$");
-    mockMvc.perform(post("/login")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content(objectMapper.writeValueAsString(mockUser)))
-        .andExpect(status().isOk())
-        .andExpect(jsonPath("status", is("ok")))
-        .andExpect(jsonPath("token", is("^[A-Za-z0-9-_]*\\.[A-Za-z0-9-_]*\\.[A-Za-z0-9-_]*$")))
-        .andDo(print());
-  }
-
-  @Test
-  public void givenLogin_whenFieldsAreNull_thenReturnsBadRequest()
-      throws Exception {
-    errorResponse.setMessage("Missing parameter(s): password, username!");
-    when(mockedUserService.authenticateUser(any()))
-        .thenThrow(new MissingParameterException("Missing parameter(s): password, username!"));
-    mockMvc.perform(post("/login")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content(objectMapper.writeValueAsString(mockUser)))
-        .andExpect(status().isBadRequest())
-        .andExpect(jsonPath("status", is(errorResponse.getStatus())))
-        .andExpect(jsonPath("message", is(errorResponse.getMessage())))
-        .andDo(print());
-  }
-
-  @Test
-  public void givenLogin_whenUsernameIsNull_thenReturnsBadRequest()
-      throws Exception {
-    mockUser.setPassword("pass");
-    errorResponse.setMessage("Missing parameter(s): username!");
-    when(mockedUserService.authenticateUser(any()))
-        .thenThrow(new MissingParameterException("Missing parameter(s): username!"));
-    mockMvc.perform(post("/login")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content(objectMapper.writeValueAsString(mockUser)))
-        .andExpect(status().isBadRequest())
-        .andExpect(jsonPath("status", is(errorResponse.getStatus())))
-        .andExpect(jsonPath("message", is(errorResponse.getMessage())))
-        .andDo(print());
-  }
-
-  @Test
-  public void givenLogin_whenPasswordIsNull_thenReturnsBadRequest() throws Exception {
-    mockUser.setUsername("user");
-    errorResponse.setMessage("Missing parameter(s): password!");
-    when(mockedUserService.authenticateUser(any()))
-        .thenThrow(new MissingParameterException("Missing parameter(s): password!"));
-    mockMvc.perform(post("/login")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content(objectMapper.writeValueAsString(mockUser)))
-        .andExpect(status().isBadRequest())
-        .andExpect(jsonPath("status", is(errorResponse.getStatus())))
-        .andExpect(jsonPath("message", is(errorResponse.getMessage())))
-        .andDo(print());
-  }
+//  @Test
+//  public void givenLogin_whenRequestBodyIsValid_thenReturnsOk() throws Exception {
+//    mockUser.setUsername("user");
+//    mockUser.setPassword("pass");
+//    AppUserDetails appUserDetails = new AppUserDetails(mockUser);
+//    UserDetails userDetails = modelMapper.map(appUserDetails, UserDetails.class);
+//    when(mockedUserService.authenticateUser(any())).thenReturn(userDetails);
+//    when(mockedJwtUtil.generateToken(any())).thenReturn("^[A-Za-z0-9-_]*\\.[A-Za-z0-9-_]*\\.[A-Za-z0-9-_]*$");
+//    mockMvc.perform(post("/login")
+//        .contentType(MediaType.APPLICATION_JSON)
+//        .content(objectMapper.writeValueAsString(mockUser)))
+//        .andExpect(status().isOk())
+//        .andExpect(jsonPath("status", is("ok")))
+//        .andExpect(jsonPath("token", is("^[A-Za-z0-9-_]*\\.[A-Za-z0-9-_]*\\.[A-Za-z0-9-_]*$")))
+//        .andDo(print());
+//  }
+//
+//  @Test
+//  public void givenLogin_whenFieldsAreNull_thenReturnsBadRequest()
+//      throws Exception {
+//    errorResponse.setMessage("Missing parameter(s): password, username!");
+//    when(mockedUserService.authenticateUser(any()))
+//        .thenThrow(new MissingParameterException("Missing parameter(s): password, username!"));
+//    mockMvc.perform(post("/login")
+//        .contentType(MediaType.APPLICATION_JSON)
+//        .content(objectMapper.writeValueAsString(mockUser)))
+//        .andExpect(status().isBadRequest())
+//        .andExpect(jsonPath("status", is(errorResponse.getStatus())))
+//        .andExpect(jsonPath("message", is(errorResponse.getMessage())))
+//        .andDo(print());
+//  }
+//
+//  @Test
+//  public void givenLogin_whenUsernameIsNull_thenReturnsBadRequest()
+//      throws Exception {
+//    mockUser.setPassword("pass");
+//    errorResponse.setMessage("Missing parameter(s): username!");
+//    when(mockedUserService.authenticateUser(any()))
+//        .thenThrow(new MissingParameterException("Missing parameter(s): username!"));
+//    mockMvc.perform(post("/login")
+//        .contentType(MediaType.APPLICATION_JSON)
+//        .content(objectMapper.writeValueAsString(mockUser)))
+//        .andExpect(status().isBadRequest())
+//        .andExpect(jsonPath("status", is(errorResponse.getStatus())))
+//        .andExpect(jsonPath("message", is(errorResponse.getMessage())))
+//        .andDo(print());
+//  }
+//
+//  @Test
+//  public void givenLogin_whenPasswordIsNull_thenReturnsBadRequest() throws Exception {
+//    mockUser.setUsername("user");
+//    errorResponse.setMessage("Missing parameter(s): password!");
+//    when(mockedUserService.authenticateUser(any()))
+//        .thenThrow(new MissingParameterException("Missing parameter(s): password!"));
+//    mockMvc.perform(post("/login")
+//        .contentType(MediaType.APPLICATION_JSON)
+//        .content(objectMapper.writeValueAsString(mockUser)))
+//        .andExpect(status().isBadRequest())
+//        .andExpect(jsonPath("status", is(errorResponse.getStatus())))
+//        .andExpect(jsonPath("message", is(errorResponse.getMessage())))
+//        .andDo(print());
+//  }
 }

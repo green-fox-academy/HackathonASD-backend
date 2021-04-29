@@ -13,3 +13,6 @@
 |REDIRECT_URI        |{url to redirect}             |        
 |CLIENT SECRET       |{secret}                      |
 |JWT_SECRET_KEY      |{add a 64bit secret key}      |
+|GMAIL_PASSWORD      |NemTudomAJelszavamat          |
+|GMAIL_USERNAME      |johannsenite.tribes@gmail.com |
+|VERIFY_UR           |http://localhost:8080         |

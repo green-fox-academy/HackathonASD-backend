@@ -17,10 +17,12 @@ import java.util.Collection;
 public class AppUserDetails implements UserDetails {
   private String username;
   private String password;
+  private boolean active;
 
   public AppUserDetails(User user) {
     this.username = user.getUsername();
     this.password = user.getPassword();
+    this.active = true;
   }
 
   @Override

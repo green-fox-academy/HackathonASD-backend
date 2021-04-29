@@ -13,13 +13,18 @@ import java.util.Optional;
 @Service
 public class AppUserDetailsService implements UserDetailsService {
 
-  @Autowired
   private UserRepository userRepository;
+
+  @Autowired
+  public AppUserDetailsService(UserRepository userRepository) {
+    this.userRepository = userRepository;
+  }
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    Optional<User> optionalUser = userRepository.findUserByUsername(username);
-    optionalUser.orElseThrow(() -> new UsernameNotFoundException("No such user: " + username + "!"));
-    return optionalUser.map(AppUserDetails::new).get();
+    Optional<User> user = userRepository.findUserByUsername(username);
+    user.orElseThrow(() -> new UsernameNotFoundException("Not found: " + username));
+    return user.map(AppUserDetails::new).get();
+
   }
 }
