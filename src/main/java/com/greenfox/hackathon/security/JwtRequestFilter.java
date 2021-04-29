@@ -27,7 +27,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
         String username = null;
-        String token = request.getHeader("X-meme-token");
+        String token = request.getHeader("X-ecommerce-token");
 
         if (token != null) {
             username = jwtUtil.extractUsername(token);
