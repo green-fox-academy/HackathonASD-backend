@@ -1,6 +1,5 @@
 package com.greenfox.hackathon.model;
 
-
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +8,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class OrderDTO {
-  private String user;
-  private List<ItemMinDTO> items;
+@NoArgsConstructor
+public class PurchaseSuccessDTO {
+  private String message = "Thank you for ordering! We have sent you an email with the details of your order. ";
 }
