@@ -133,25 +133,4 @@ public class ItemService {
     }
     return null;
   }
-
-  //todo test for functions
-
-
-//  public List<Item> getSortedItemsByPrice() {
-//    return itemRepository.getSortedItemsByPrice();
-//  }
-//
-//  public List<Item> getSortedItemsByPriceDesc() {
-//    return itemRepository.getSortedItemsByPriceDesc();
-//  }
-//
-//  public List<Item> getItemsUnderCertainPrice(Long price) {
-//    return itemRepository.getItemsUnderCertainPrice(price);
-//  }
-//
-//  public List<Item> getSearchedItems(String searchedItem) {
-//    return itemRepository.getSearchedItems(searchedItem);
-//  }
-
-
 }
