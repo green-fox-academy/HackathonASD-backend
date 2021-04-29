@@ -16,7 +16,8 @@ CREATE TABLE wishlists
     PRIMARY KEY (wishlist_id)
 );
 INSERT INTO wishlists (wishlist_id, wishlist_name)
-VALUES (1, 'Bond\'s wishlist');
+VALUES (1, 'Bond\'s wishlist'),
+       (2, 'James\'s wishlist');
 
 
 
