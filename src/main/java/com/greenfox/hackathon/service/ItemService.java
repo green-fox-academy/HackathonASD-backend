@@ -10,6 +10,7 @@ import com.greenfox.hackathon.model.ItemUpdateDTO;
 import com.greenfox.hackathon.repository.ItemRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -121,7 +122,11 @@ public class ItemService {
         if (filter.equals("discounted")) {
             return ResponseEntity.ok(getDiscountedItemDTOs());
         } else if (filter.equals("all")){
-            return ResponseEntity.ok(itemRepository.findAll(pageable));
+            ModelMapper modelMapper = new ModelMapper();
+            List<ItemDTO> itemDTOList = itemRepository.findAll(pageable).stream()
+                .map(h -> modelMapper.map(h, ItemDTO.class))
+                .collect(Collectors.toList());
+            return ResponseEntity.ok(itemDTOList);
         }
         return null;
     }

@@ -21,43 +21,44 @@ import java.util.List;
 @RestController
 public class ItemController {
 
-    ItemService itemService;
+  ItemService itemService;
 
-    @Autowired
-    public ItemController(ItemService itemService) {
-        this.itemService = itemService;
-    }
+  @Autowired
+  public ItemController(ItemService itemService) {
+    this.itemService = itemService;
+  }
 
-    @PostMapping("/item")
-    public ResponseEntity<Item> saveItemToDatabase(@RequestBody(required = false) ItemDTO itemDTO)
-            throws InvalidItemDTOException {
-        return ResponseEntity.ok(itemService.saveItem(itemDTO));
-    }
+  @PostMapping("/item")
+  public ResponseEntity<Item> saveItemToDatabase(@RequestBody(required = false) ItemDTO itemDTO)
+      throws InvalidItemDTOException {
+    return ResponseEntity.ok(itemService.saveItem(itemDTO));
+  }
 
-    @GetMapping("/item")
-    public ResponseEntity<?> getAllItems(@RequestParam(required = false, defaultValue = "all") String filter, Pageable pageable) {
-        return itemService.getFilteredItems(filter,pageable);
-    }
+  @GetMapping("/item")
+  public ResponseEntity<?> getAllItems(
+      @RequestParam(required = false, defaultValue = "all") String filter, Pageable pageable) {
+    return itemService.getFilteredItems(filter, pageable);
+  }
 
-    @GetMapping("/item/{id}")
-    public ResponseEntity<?> getItem(@PathVariable long id) throws NoSuchItemException {
-        return ResponseEntity.ok(itemService.findItem(id));
-    }
+  @GetMapping("/item/{id}")
+  public ResponseEntity<?> getItem(@PathVariable long id) throws NoSuchItemException {
+    return ResponseEntity.ok(itemService.findItem(id));
+  }
 
-    @PutMapping("/item")
-    public ResponseEntity<Item> updateItem(@RequestBody(required = false)
-                                                ItemUpdateDTO itemUpdateDTO)
-            throws InvalidItemUpdateDTOException, NoSuchItemException {
-        return ResponseEntity.ok(itemService.updateItem(itemUpdateDTO));
-    }
+  @PutMapping("/item")
+  public ResponseEntity<Item> updateItem(@RequestBody(required = false)
+                                             ItemUpdateDTO itemUpdateDTO)
+      throws InvalidItemUpdateDTOException, NoSuchItemException {
+    return ResponseEntity.ok(itemService.updateItem(itemUpdateDTO));
+  }
 
-    @DeleteMapping("/item/{id}")
-    public ResponseEntity<Item> deleteItem(@PathVariable
+  @DeleteMapping("/item/{id}")
+  public ResponseEntity<Item> deleteItem(@PathVariable
                                              Long id) throws MissingParameterException {
-        return ResponseEntity.ok(itemService.deleteItem(id));
-    }
+    return ResponseEntity.ok(itemService.deleteItem(id));
+  }
 
-    //todo Integration tests
+  //todo Integration tests
 
 //  @GetMapping("/getAllItems/sorted")
 //  public ResponseEntity<?> getSortedItemsByPrice() {
