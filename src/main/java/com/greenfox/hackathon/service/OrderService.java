@@ -1,6 +1,7 @@
 package com.greenfox.hackathon.service;
 
 
+import com.greenfox.hackathon.exception.ItemOutOfStockException;
 import com.greenfox.hackathon.exception.NoSuchItemException;
 import com.greenfox.hackathon.exception.NoSuchOrderException;
 import com.greenfox.hackathon.exception.UserDoesNotExistException;
@@ -105,14 +106,15 @@ public class OrderService {
   }
 
 
-  public void buyTheOrder(OrderDTO orderDTO)throws ItemOutOfStockException {
-    List<Item> itemList = orderDTO.getItemList();
-    for (Item item : itemList) {
+  public void buyTheOrder(OrderDTO orderDTO) throws ItemOutOfStockException {
+    List<ItemMinDTO> itemList = orderDTO.getItems();
+    for (ItemMinDTO item : itemList) {
       if (item.getQuantity() == 0) {
         throw new ItemOutOfStockException("Item out of stock: " + item.getName());
       } else {
-        item.setCost(item.getCost() - 1);
-        itemRepository.save(item);
+        Item itemInRepo = itemRepository.findItemByName(item.getName()).get();
+        itemInRepo.setQuantity(itemInRepo.getQuantity() - 1);
+        itemRepository.save(itemInRepo);
       }
     }
   }

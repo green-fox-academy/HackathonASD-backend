@@ -29,12 +29,11 @@ public class BuyItController {
   }
 
   @PostMapping("/buy")
-  public ResponseEntity<Item> purchaseTheOrder(@RequestBody OrderDTO orderDTO,
-                                               Principal principal)
+  public ResponseEntity<OrderDTO> purchaseTheOrder(@RequestBody OrderDTO orderDTO,
+                                                   Principal principal)
       throws UserDoesNotExistException, ItemOutOfStockException {
     User user = userService.getUserByUsername(principal.getName());
     orderService.buyTheOrder(orderDTO);
-    return new ResponseEntity<>(, HttpStatus.OK);
+    return new ResponseEntity<>(orderDTO, HttpStatus.OK);
   }
-}
 }
